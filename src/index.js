@@ -19,7 +19,9 @@ app.use(cors(corsOrigin));
 
 app.use("/armschair", Arm_controller);
 
-app.listen(8080,()=>{
+port = process.env.PORT || 3000;
+
+app.listen(port,()=>{
     try{
         connect();
         console.log("listing to 8080")
