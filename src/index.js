@@ -18,13 +18,14 @@ const corsOrigin = {
 app.use(cors(corsOrigin));
 
 app.use("/armschair", Arm_controller);
+// app.use("/armschair/:id", Arm_controller);
 
 port = process.env.PORT || 3000;
 
 app.listen(port,()=>{
     try{
         connect();
-        console.log("listing to 8080")
+        console.log(`listing to ${port}`)
     }catch(e){
         console.error({message:e.message})
     }
