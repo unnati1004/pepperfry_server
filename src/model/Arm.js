@@ -10,4 +10,4 @@ const Arms_schema = mongoose.Schema({
     image3:{ type: String, require: true },
 })
 
-module.exports = mongoose.model("Product", Arms_schema);
+module.exports = mongoose.model("Arms_chair", Arms_schema);
