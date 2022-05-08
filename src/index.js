@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const connect = require("./config/db");
 const Arm_controller = require("./controller/Arm_controller");
+const {register, login}=require("./controller/authentication.controller");
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(cors(corsOrigin));
 
 app.use("/armschair", Arm_controller);
 // app.use("/armschair/:id", Arm_controller);
+app.post("/register", register); 
+app.post("/login", login);
 
 port = process.env.PORT || 3000;
 
